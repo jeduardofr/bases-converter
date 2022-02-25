@@ -8,7 +8,7 @@ bool validate_string(const char *input, uint32_t base) {
 
   for (int i = 0; i < size; ++i) {
     auto c = input[i];
-    if (auto value = base_map.find(c); value != base_map.end()) {
+    if (auto value = char_to_value.find(c); value != char_to_value.end()) {
       if (value->second >= base) {
         return false;
       }

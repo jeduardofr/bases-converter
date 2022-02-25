@@ -23,6 +23,11 @@ TEST(test_converter, any_base_to_base_10) {
   check_decimal_convertion("2V", 32, 95);
 }
 
+TEST(test_converter, base_2_to_base_10) {
+  // check_convertion("1F8A", 16, 10, "8074");
+  check_convertion("185623", 10, 2, "101101010100010111");
+}
+
 void check_convertion(const char *input, uint32_t initial_base, uint32_t final_base, const char* output) {
   char* result  = converter::convert(input, initial_base, final_base);
   EXPECT_STREQ(result, output);
