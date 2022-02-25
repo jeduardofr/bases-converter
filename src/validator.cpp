@@ -1,5 +1,5 @@
-#include <cstring>
 #include <converter/validator.h>
+#include <cstring>
 
 namespace converter {
 
@@ -12,7 +12,8 @@ bool validate_string(const char *input, uint32_t base) {
       if (value->second >= base) {
         return false;
       }
-    } else return false;
+    } else
+      return false;
   }
 
   return true;
