@@ -47,7 +47,7 @@ TEST(test_converter, any_base_to_any_base) {
 
 void check_convertion(const char *input, uint32_t initial_base,
                       uint32_t final_base, const char *output) {
-  char *result = converter::convert(input, initial_base, final_base);
+  auto result = converter::convert(input, initial_base, final_base);
   EXPECT_STREQ(result, output);
   delete result;
 }
