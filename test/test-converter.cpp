@@ -36,6 +36,11 @@ TEST(test_converter, any_base_to_any_base) {
   check_convertion("1F8A", 16, 2, "1111110001010");
   check_convertion("1F8A", 16, 8, "17612");
   check_convertion("1F8A", 16, 10, "8074");
+
+  check_convertion("1296", 10, 32, "18G");
+  check_convertion("SR10A", 32, 20, "990EEI");
+  check_convertion("R62", 29, 3, "1011101112");
+  check_convertion("IH2A3", 19, 2, "1001011001011001000000");
 }
 
 void check_convertion(const char *input, uint32_t initial_base, uint32_t final_base, const char* output) {
