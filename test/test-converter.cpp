@@ -1,11 +1,13 @@
-#include <cstdio>
 #include <converter/converter.h>
+#include <cstdio>
 #include <gtest/gtest.h>
 
 namespace converter {
 
-void check_convertion(const char *input, uint32_t initial_base, uint32_t final_base, const char* output);
-void check_decimal_convertion(const char *input, uint32_t base, uint32_t result);
+void check_convertion(const char *input, uint32_t initial_base,
+                      uint32_t final_base, const char *output);
+void check_decimal_convertion(const char *input, uint32_t base,
+                              uint32_t result);
 
 TEST(test_converter, any_base_to_base_10) {
   check_decimal_convertion("10110", 2, 22);
@@ -43,13 +45,15 @@ TEST(test_converter, any_base_to_any_base) {
   check_convertion("IH2A3", 19, 2, "1001011001011001000000");
 }
 
-void check_convertion(const char *input, uint32_t initial_base, uint32_t final_base, const char* output) {
-  char* result  = converter::convert(input, initial_base, final_base);
+void check_convertion(const char *input, uint32_t initial_base,
+                      uint32_t final_base, const char *output) {
+  char *result = converter::convert(input, initial_base, final_base);
   EXPECT_STREQ(result, output);
   delete result;
 }
 
-void check_decimal_convertion(const char *input, uint32_t base, uint32_t result) {
+void check_decimal_convertion(const char *input, uint32_t base,
+                              uint32_t result) {
   auto n = converter::to_base_10(input, base);
   EXPECT_EQ(n, result);
 }
