@@ -1,15 +1,15 @@
 cmake_minimum_required(VERSION 3.10)
 
 add_executable(
-    json-parser-test
-    test-lex.cpp
+    converter-test
+    test-validator.cpp
 )
 
 target_link_libraries(
-    json-parser-test
+    converter-test
     PRIVATE
     gmock
     gmock_main
     gtest
-    json-parser-lib
+    converter-lib
 )

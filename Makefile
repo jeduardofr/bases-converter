@@ -11,4 +11,7 @@ configure:
 	cd build && cmake ../
 
 run:
-	./build/test/json-parser-test
+	./build/src/converter
+
+run-tests:
+	./build/test/converter-test

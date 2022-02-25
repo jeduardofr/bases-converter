@@ -1,17 +1,16 @@
 cmake_minimum_required(VERSION 3.10)
 
 add_executable(
-  json-parser
+  converter
   main.cpp
 )
 
-target_link_libraries(json-parser PRIVATE json-parser-lib)
-
+target_link_libraries(converter PRIVATE converter-lib)
 
 add_library(
-  json-parser-lib
-  lex.cpp
+  converter-lib
+  validator.cpp
 )
 
-target_include_directories(json-parser-lib PUBLIC .)
+target_include_directories(converter-lib PUBLIC .)
 
