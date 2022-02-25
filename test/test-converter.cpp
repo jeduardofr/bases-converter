@@ -23,9 +23,19 @@ TEST(test_converter, any_base_to_base_10) {
   check_decimal_convertion("2V", 32, 95);
 }
 
-TEST(test_converter, base_2_to_base_10) {
-  // check_convertion("1F8A", 16, 10, "8074");
+TEST(test_converter, any_base_to_any_base) {
+  check_convertion("1001010101010", 2, 16, "12AA");
+  check_convertion("1001010101010", 2, 10, "4778");
+  check_convertion("1001010101010", 2, 8, "11252");
+  check_convertion("15264", 8, 2, "1101010110100");
+  check_convertion("15264", 8, 10, "6836");
+  check_convertion("15264", 8, 16, "1AB4");
   check_convertion("185623", 10, 2, "101101010100010111");
+  check_convertion("185623", 10, 16, "2D517");
+  check_convertion("185623", 10, 8, "552427");
+  check_convertion("1F8A", 16, 2, "1111110001010");
+  check_convertion("1F8A", 16, 8, "17612");
+  check_convertion("1F8A", 16, 10, "8074");
 }
 
 void check_convertion(const char *input, uint32_t initial_base, uint32_t final_base, const char* output) {
