@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 3.10)
 add_executable(
     converter-test
     test-validator.cpp
+	test-converter.cpp
 )
 
 target_link_libraries(
