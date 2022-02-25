@@ -1,5 +1,5 @@
-#include <converter/validator.h>
 #include <converter/converter.h>
+#include <converter/validator.h>
 #include <iostream>
 
 int main(int argc, char **argv) {
@@ -18,7 +18,8 @@ int main(int argc, char **argv) {
     switch (option) {
       case 1: {
         bool control = false;
-        std::cout << "Ingresa el valor a convertir en un rango de base de 2 a 30\n";
+        std::cout
+            << "Ingresa el valor a convertir en un rango de base de 2 a 30\n";
         std::cout << "> ";
         std::cin >> input;
 
@@ -31,12 +32,14 @@ int main(int argc, char **argv) {
         std::cin >> final_base;
 
         if (!converter::validate_string(input, initial_base)) {
-          std::cout << "El valor que ingresaste usa caracteres no permitidos por la base de entrada seleccionada\n\n";
+          std::cout << "El valor que ingresaste usa caracteres no permitidos "
+                       "por la base de entrada seleccionada\n\n";
           break;
         }
 
         auto result = converter::convert(input, initial_base, final_base);
-        std::cout << "El valor " << input << " de base " << initial_base << " a base " << final_base << " es " << result << "\n\n";
+        std::cout << "El valor " << input << " de base " << initial_base
+                  << " a base " << final_base << " es " << result << "\n\n";
         delete result;
       } break;
       case 2:
@@ -45,7 +48,7 @@ int main(int argc, char **argv) {
       default:
         std::cout << "Opción inválida\n";
     }
-  } while(exit != true);
+  } while (exit != true);
 
   return 0;
 }
