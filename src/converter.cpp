@@ -9,10 +9,6 @@
 namespace converter {
 
 uint32_t to_base_10(const char* input, uint32_t base) {
-  if (base == 10) {
-    return std::stoi(input);
-  }
-
   uint32_t result = 0;
   auto size = strlen(input);
   for (int i = 0, power = size - 1; i < size; ++i, --power) {
